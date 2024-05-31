@@ -60,9 +60,9 @@ This API makes it possible end-users to perform certain tasks. It has the follow
 
 21.	Customers can browse their own orders
 
-# API STRUCTURE
+## API STRUCTURE
 
-## /api/auth/users
+### /api/auth/users
 
     -GET method: 
         -from Anonomous:
@@ -72,7 +72,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
         -from Superuser:
             Retrieves all Users information
 
-## /api/auth/users/
+### /api/auth/users/
 
     -POST method:
         Allows everyone to register an account when supplied with the data:
@@ -80,20 +80,20 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             password
             email  
                
-## /api/auth/token/login/
+### /api/auth/token/login/
 
     -POST method:
         Returns authorization token for given login:
             username
             password 
 
-## /api/auth/users/me
+### /api/auth/users/me
 
     -GET method:
         displays user information based on token
         NOTE a user token is required for all features of the API with the exception of registering and viewing the menu
 
-## /api/menu-items
+### /api/menu-items
 
      
     -GET method:
@@ -108,7 +108,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
                 title
                 price
 
-## /api/menu-items/category
+### /api/menu-items/category
 
     
     -GET method:
@@ -119,7 +119,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             Adds a category given:
                 slug
 
-## /api/menu-items/{menuitemId}
+### /api/menu-items/{menuitemId}
 
     -GET method:
         Displays all details of the given {menuitemId} 
@@ -130,7 +130,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
         from Superusers:
             Deletes the given {menuitemId}
 
-## /api/groups/managers/users
+### /api/groups/managers/users
 
     -GET method:
         -from Managers and Superusers:
@@ -140,13 +140,13 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             Adds a user to the managers group given:
                 username
 
-## /api/groups/managers/users/{userId}
+### /api/groups/managers/users/{userId}
 
     -DELETE method:
         from Managers and Superusers:
             Removes the User associated with {userId} from the managers group 
 
-## /api/groups/delivery-crew/users
+### /api/groups/delivery-crew/users
 
     -GET method:
         -from Managers and Superusers:
@@ -156,13 +156,13 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             Adds a user to the delivery crew group given:
                 username
 
-## /api/groups/delivery-crew/users/{userId}
+### /api/groups/delivery-crew/users/{userId}
 
     -DELETE method:
         from Managers and Superusers:
             Removes the User associated with {userId} from the delivery crew group
 
-## /api/cart/menu-items
+### /api/cart/menu-items
 
     -GET method:
         from Users:
@@ -177,7 +177,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             If given a menuitem (Id) removes item from the cart
             If no data give removes all items from cart
 
-## /api/orders
+### /api/orders
 
     -GET method:
         from Users:
@@ -189,7 +189,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
     -POST method:
         places an order based on items in the user's cart, and empties the cart.
 
-## /api/orders/{orderId}
+### /api/orders/{orderId}
 
     -GET method:
         from User:
